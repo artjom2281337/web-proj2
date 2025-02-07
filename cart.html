@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MMarket - Main Page</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/cart.css">
+    <link rel="icon" href="img/logo.png">
+</head>
+<body>
+    <header>
+        
+        <div class="menu">
+            <button id="menu-button">
+                <img src="img/menu.png" alt="Menu">
+            </button>
+        </div>
+
+        <div class="logo">
+            <a href="index.html">
+                <div id="logo-container">
+                    <img src="img/logo.png" alt="MMarket Logo">
+                    <h1>MMarket</h1>
+                </div>
+            </a>
+        </div>
+
+        <div class="searchbar">
+            <div id="seachbar-div">
+                <input type="text" size="45" placeholder="Search...">
+            </div>
+        </div>
+        
+        <div class="entry">
+            <a href="entry.html">
+                <button id="login-button">
+                    <img src="img/user.png" alt="Login">
+                    <span>Login</span>
+                </button>
+            </a>
+        </div>  
+
+        <div class="cart">
+            <a href="cart.html">
+                <button id="cart-button">
+                    <img src="img/cart.png" alt="Cart">
+                </button>
+            </a>
+        </div>
+
+    </header>
+
+    <main id="cart-display">
+        <span id="cart-title">My cart</span> <span id="cart-count">4 items</span>
+        <div id="cart-content">
+            <div id="cart-left">
+                <section class="cart-item">
+                    <div class="cart-item-img">
+                        <img src="img/items/banana.png" alt="">
+                    </div>
+                    <div class="cart-item-content">
+                        <div class="cart-item-content-top">
+                            <span class="cart-item-name">Chiquita banana</span>
+                            <span class="cart-item-price">2,06€</span>
+                        </div>
+                        <div class="cart-item-content-bot">
+                            <div class="cart-delete">
+                                <a href="#">
+                                    <img src="img/trash.png" alt="">
+                                    <span href="#">Remove this item</span>
+                                </a>
+                            </div>
+                            <div class="cart-addition">
+                                <button>-</button>
+                                <span>2 pcs</span>
+                                <button>+</button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="cart-item">
+                    <div class="cart-item-img">
+                        <img src="img/items/rtx4090.png" alt="">
+                    </div>
+                    <div class="cart-item-content">
+                        <div class="cart-item-content-top">
+                            <span class="cart-item-name">GeForce RTX 4090 24GB XLR8 VERTO EPIC-X RGB Triple Fan</span>
+                            <span class="cart-item-price">679,99€</span>
+                        </div>
+                        <div class="cart-item-content-bot">
+                            <div class="cart-delete">
+                                <a href="#">
+                                    <img src="img/trash.png" alt="">
+                                    <span href="#">Remove this item</span>
+                                </a>
+                            </div>
+                            <div class="cart-addition">
+                                <button>-</button>
+                                <span>1 pcs</span>
+                                <button>+</button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="cart-item">
+                    <div class="cart-item-img">
+                        <img src="img/items/banana.png" alt="">
+                    </div>
+                    <div class="cart-item-content">
+                        <div class="cart-item-content-top">
+                            <span class="cart-item-name">Chiquita banana</span>
+                            <span class="cart-item-price">2,06€</span>
+                        </div>
+                        <div class="cart-item-content-bot">
+                            <div class="cart-delete">
+                                <a href="#">
+                                    <img src="img/trash.png" alt="">
+                                    <span href="#">Remove this item</span>
+                                </a>
+                            </div>
+                            <div class="cart-addition">
+                                <button>-</button>
+                                <span>2 pcs</span>
+                                <button>+</button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="cart-item">
+                    <div class="cart-item-img">
+                        <img src="img/items/rtx4090.png" alt="">
+                    </div>
+                    <div class="cart-item-content">
+                        <div class="cart-item-content-top">
+                            <span class="cart-item-name">GeForce RTX 4090 24GB XLR8 VERTO EPIC-X RGB Triple Fan</span>
+                            <span class="cart-item-price">679,99€</span>
+                        </div>
+                        <div class="cart-item-content-bot">
+                            <div class="cart-delete">
+                                <a href="#">
+                                    <img src="img/trash.png" alt="">
+                                    <span href="#">Remove this item</span>
+                                </a>
+                            </div>
+                            <div class="cart-addition">
+                                <button>-</button>
+                                <span>1 pcs</span>
+                                <button>+</button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <aside id="cart-total">
+                <div id="cart-summary">
+                    <div id="cart-top">
+                        <span class="cbold">Cart summary</span>
+                        <span class="cgray">6 items</span>
+                    </div>
+                    <div id="cart-mid">
+                        <span class="cthin">Total amount</span>
+                        <span class="cthin">1364,10€</span>
+                    </div>
+                    <div id="cart-bot">
+                        <span class="cbold">Amount to be paid</span>
+                        <span class="cbold">1364,10€</span>
+                    </div>
+                </div>
+                <div id="cart-delivery">
+                    <div class="cart-delivery-option">
+                        <input type="radio" id="cart-bring" name="delivery" value="a">
+                        <div class="cart-delivery-desc">
+                            <label for="html">Bring it to my address</label>
+                            <p>We will bring the items to this address: <br>
+                                Pipsapossunkatu 13 a 37, 12345, Hämeenlinna </p>
+                        </div>
+                    </div>
+                    <div class="cart-delivery-option">
+                        <input type="radio" id="cart-take" name="delivery" value="b">
+                        <div class="cart-delivery-desc">
+                            <label for="html">Take from the closest MMarket</label>
+                            <p>The current closest MMarket to you location is: <br>
+                                Pipsapossunkatu 4 a 20, 12345, Hämeenlinna <br>
+                                <u>Note: This has nothing to do with stealing data.</u></p>
+                        </div>
+                    </div>
+                </div>
+                <div id="cart-proceed">
+                    <button>Proceed to payment</button>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-section">
+            <h3>MMArket</h3>
+            <ul>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Trading Guide</a></li>
+                <li><a href="#">Frequently Asked Questions</a></li>
+                <li><a href="#">Customer Service</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">Information Text</a></li>
+                <li><a href="#">Personal</a></li>
+                <li><a href="#">Terms of Use</a></li>
+                <li><a href="#">Cookies</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h3>Popular pages</h3>
+            <ul>
+                <li><a href="#">Seasonal Vegetables</a></li>
+                <li><a href="#">Ice Cream</a></li>
+                <li><a href="#">Beef</a></li>
+                <li><a href="#">Mask</a></li>
+                <li><a href="#">Long Lasting Milk</a></li>
+                <li><a href="#">NVIDIA RTX 4090</a></li>
+                <li><a href="#">Exotic Fruits</a></li>
+                <li><a href="#">Shotgun</a></li>
+                <li><a href="#">Eggs</a></li>
+                <li><a href="#">Hair Care</a></li>
+                <li><a href="#">Paper Towel</a></li>
+                <li><a href="#">Fortnite Battlepass</a></li>
+                <li><a href="#">Toilet Paper</a></li>
+                <li><a href="#">Olive Oil</a></li>
+                <li><a href="#">Shave Knife</a></li>
+                <li><a href="#">Turkish Coffee</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h3>Our news</h3>
+            <ul>
+                <li><a href="#">Hello MMarket</a></li>
+                <li><a href="#">MMarket TV</a></li>
+                <li><a href="#">MMarket Card</a></li>
+                <li><a href="#">My Healthy Life Travel</a></li>
+
+            </ul> <br> <br>
+            <h3>Mobile Applications</h3>
+            <div class="app-icons">
+                <img src="img/mobile.png">
+            </div>
+        </div>
+        <div class="footer-section">
+            <h3>Follow Us</h3>
+            <div class="social-icons">
+                <img src="img/instagram.png" alt="Instagram">
+                <img src="img/facebook.png" alt="Facebook">
+                <img src="img/youtube.png" alt="YouTube">
+                <img src="img/x.png" alt="X">
+                <img src="img/linkedin.png" alt="LinkedIn">
+            </div> <br>
+            <div class="button-n">Nearest MM</div>
+        </div>
+    </footer>
+</body>
+</html>

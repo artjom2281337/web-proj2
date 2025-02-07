@@ -1,0 +1,484 @@
+.membership{
+    text-align: center;
+    padding: 20px;
+    margin-bottom: 20px;
+    background-color: #AA5E12;
+    border-radius: 15px;
+}
+.membership button{
+    padding: 10px 20px;
+    margin-top: 10px;
+    background-color: #854300;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    color: white;
+}
+.membership img{
+    width: 200px;
+    margin-bottom: 10px;
+}
+.membership button:hover{
+    text-decoration: underline;
+}
+.products, .discounts{
+    margin-top: 40px;
+}
+.products h1, .discounts h1{
+    margin-bottom: 20px;
+}
+.product-list, .discount-list{
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    background-color: #FFFFFF;
+}
+.product, .discount{
+    border: 1px solid;
+    border-radius: 8px;
+    padding: 10px;
+    text-align: center;
+    width: 180px;
+}
+.product img, .discount img{
+    max-width: 100%;
+    border-radius: 8px;
+}
+.discount-list img, .product-list img{
+    width: 200px;
+    height: 200px;
+}
+.product a, .discount a{
+    text-decoration: none;
+}
+.app{
+    text-align: center;
+    padding: 20px;
+    margin-bottom: 20px;
+    background-color: #A80000;
+    color: white;
+    border-radius: 15px;
+}
+.app img{
+    width: 200px;
+    margin-bottom: 10px;
+}
+.appimg img{
+    width: 500px;
+    margin-bottom: 10px;
+}
+.prefer{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 40px;
+}
+.pref{
+    text-align: center;
+    width: 30px;
+}
+.pref img{
+    width: 200px;
+    margin-bottom: 10px;
+}
+.job{
+    text-align: center;
+    padding: 20px;
+    margin-bottom: 20px;
+    background-color: #FFFFFF;
+    border-radius: 15px;
+}
+.job button{
+    padding: 10px 20px;
+    margin-top: 10px;
+    background-color: #4049AD;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    color: white;
+}
+
+#main-main {
+    max-width: 1500px;
+    width: 80%;
+    margin: 0 auto;
+}
+
+#main-membership {
+    margin-top: 20px;
+    margin-bottom: 50px;
+    background-color: rgb(248, 184, 88);
+    border-radius: 50px;
+    padding: 30px;
+    display: flex;
+}
+
+#main-mem-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    flex: 1;
+    color: rgb(151, 60, 27);
+    text-align: center;
+    font-size: x-large;
+    padding: 5px;
+}
+
+#main-mem-info button a {
+    text-decoration: none;
+    color: white;
+}
+
+#main-mem-info p {
+    font-size: 24px;
+}
+
+#main-mem-img {
+    display: flex;
+    flex: 0;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+#main-mem-img {
+    width: 80%;
+}
+
+#main-mem-info button {
+    margin-top: 50px;
+    background-color: rgb(81, 46, 0);
+    color: white;
+    font-size: 30px;
+    padding: 10px 30px;
+    border-radius: 10px;
+}
+
+.discount-tag {
+    color: orangered;
+    font-weight: 600;
+    font-size: large;
+}
+
+.main-items-1 .discount-tag {
+    color: white;
+    user-select: none;
+}
+
+.main-items-1 p {
+    font-size: 20px;
+    margin-bottom: 40px;
+}
+
+.carousel-container {
+    display: flex;
+    align-items: self-start;
+    margin-bottom: 100px;
+    width: 100%;
+    height: 300px;
+}
+
+.carousel {
+    display: flex;
+    position: relative;
+    width: 600px;
+    margin: 0 auto;
+}
+
+.carousel-item, .carousel-item-2 {
+    display: none;
+    position: absolute;
+    width: 175px;
+    height: 300px;
+    border: 1px solid rgb(200, 200, 200);
+    background-color: white;
+    border-radius: 15px;
+    padding: 15px;
+    margin: 15px;
+    z-index: 0;
+}
+
+.active {
+    display: block;
+    left: 175px;
+    z-index: 3;
+    box-shadow: 10px 10px rgba(0, 0, 0, 0.7);
+    transform: scale(1.1);
+    transition: left 1s, box-shadow 1s, transform 1s;
+}
+
+.active-left {
+    display: block;
+    left: 0px;
+    z-index: 1;
+    box-shadow: 5px 5px rgba(0, 0, 0, 0.7);
+    transform: scale(0.9);
+    transition: left 1s, box-shadow 1s, transform 1s, z-index 3s;
+}
+
+.active-right {
+    display: block;
+    left: 350px;
+    z-index: 2;
+    box-shadow: 5px 5px rgba(0, 0, 0, 0.7);
+    transform: scale(0.9);
+    transition: left 1s, box-shadow 1s, transform 1s;
+}
+
+.main-items-1-div-top {
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+}
+
+.main-items-1-div-top-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.main-items-1-div-top-head button {
+    border: none;
+    background-color: transparent;
+}
+
+.main-items-1-div-top-head img {
+    width: 30px;
+}
+
+.main-items-1-div-bot {
+    margin-top: -20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.main-items-1-div-bot > p {
+    margin-bottom: 20px;
+}
+
+.main-items-1-div-bot > button {
+    margin-top: 10px;
+    font-size: 20px;
+    border-radius: 5px;
+    border: none;
+    background-color: orangered;
+    color: white;
+    padding: 5px;
+}
+
+.main-items-1-div-bot button a {
+    text-decoration: none;
+    color: white;
+}
+
+.main-items-1-div-bot-price > span:first-child {
+    font-size: larger;
+    font-weight: 600;
+}
+
+#main-items-1-content > img {
+    width: 300px;
+}
+
+/* ------------------------------ app section ------------------------------------ */
+
+#main-app-sec {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    background-color: darkred;
+    border-radius: 50px;
+    padding: 20px;
+    color: white;
+    display: flex;
+}
+
+#main-app-info, #main-app-img {
+    width: 50%;
+}
+
+#main-app-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#main-app-info {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    font-size: x-large;
+    /* border: 3px solid black; */
+    padding: 0 20px;
+}
+
+#main-app-info img {
+    width: 200px;
+}
+
+#main-app-img img {
+    width: 80%;
+    margin: 30px 0;
+    border-radius: 10px;
+}
+
+/* ------------------------------ discount section ------------------------------------ */
+
+#main-discount h1 {
+    font-size: 25px;
+}
+
+/* -------------------------------- honor section --------------------------------------------- */
+
+#main-recommend-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+#main-recommend > h1 {
+    margin-top: 50px;
+}
+
+.main-rec {
+    padding: 25px;
+    text-align: center;
+    width: 300px;
+    margin: 25px;
+    font-size: 20px;
+}
+
+.main-rec img {
+    width: 250px;
+    border-radius: 999999999999999999999999999999999999999px;
+}
+
+/* ---------------------- job opportunities ---------------- */
+
+#main-job {
+    background-color: white;
+    margin-top: 30px;
+    margin-bottom: 75px;
+    border-radius: 50px;
+    display: flex;
+    padding: 50px;
+}
+
+#main-job-img-div {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#main-job img {
+    width: 80%;
+}
+
+#main-job-info {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    padding: 50px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 20px;
+}
+
+#main-job-info button {
+    font-size: 20px;
+    padding: 10px 20px;
+    border-radius: 15px;
+    border: none;
+    background-color: rgb(0, 65, 178);
+    color: white;
+    margin-top: 30px;
+}
+
+@media only screen and (max-width: 1000px) {
+    #main-items-1-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #main-items-1-containers {
+        justify-content: center;
+
+    }
+
+    #main-membership {
+        flex-direction: column;
+    }
+
+    #main-mem-img {
+        justify-content: center;
+        width: 100%;
+    }
+
+    #main-mem-img > img {
+        width: 100%;
+        max-width: 800px;
+    }
+
+    #main-app-sec {
+        flex-direction: column;
+    }
+
+    #main-app-info, #main-app-img {
+        width: 100%;
+    }
+
+    #main-app-info {
+        padding: 0;
+    }
+
+    #main-job {
+        flex-direction: column;
+    }
+
+    #main-job-img-div, #main-job-info {
+        width: 100%;
+        padding: 0;
+    }
+
+    .main-rec {
+        width: 400px;
+    }
+    
+    .main-rec img {
+        width: 350px;
+    }
+    
+}
+
+@media only screen and (max-width: 700px) {
+    .carousel {
+        width: 330px;
+    }
+    
+    .carousel-item, .carousel-item-2 {
+        width: 100px;
+        margin: auto 0;
+    }
+
+    .active {
+        left: 100px;
+    }
+    
+    .active-right {
+        left: 200px;
+    }
+
+    .main-items-1-div-top {
+        height: 35%;
+    }
+
+    .main-items-1-div-bot > p {
+        font-size: 16px;
+        margin-bottom: 30px;
+    }
+}
