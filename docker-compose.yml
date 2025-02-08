@@ -1,0 +1,43 @@
+version: '3.8'
+services:
+  php:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 81:80
+    volumes:
+      - ./src:/var/www/html/
+    restart : always
+    networks:
+      - lan
+      
+  db: # mysql database server
+    image: mysql:8.0.34
+    restart: always #this restarts the service upon any configuration changes
+    environment: # to use and access MySQL server,we neet to set up an authentication environment
+      MYSQL_ROOT_PASSWORD: password
+    ports:
+      - "6034:3306"   #6034 in the the local machine and 3306 in the container
+    volumes: # it persists updates made to the database
+      - dbdata:/var/lib/mysql
+    networks:
+      - lan
+
+  phpmyadmin: #another service to manage database server
+    depends_on:
+      - db
+    image: phpmyadmin/phpmyadmin
+    restart: always
+    ports:
+      - '82:80'
+    environment:
+      PMA_HOST: db
+    networks:
+      - lan 
+      
+volumes:
+  dbdata:
+networks:
+  lan:
+  
