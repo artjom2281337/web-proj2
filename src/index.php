@@ -1,5 +1,6 @@
 <?php
     $title = "Main Menu";
+    $css_file = "index";
     include("header.php");
 ?>
 

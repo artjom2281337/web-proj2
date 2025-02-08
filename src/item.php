@@ -1,5 +1,6 @@
 <?php
     $title = "Item Page";
+    $css_file = "item";
     include("header.php");
 ?>
 

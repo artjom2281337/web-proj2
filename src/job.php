@@ -1,5 +1,6 @@
 <?php
     $title = "Jobs";
+    $css_file = "job";
     include("header.php");
 ?>
 
