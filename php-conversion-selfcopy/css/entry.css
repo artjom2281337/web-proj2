@@ -1,0 +1,205 @@
+article {
+    width: 80%;
+    max-width: 1500px;
+    margin: 30px auto;
+    height: 100%;
+}
+
+#container {
+    background-color: white;
+    border-radius: 30px;
+}
+
+.top-row {
+    height: 70px;
+    text-align: right;
+    border-bottom: 2px black solid;
+}
+
+.top-row img {
+    position: relative;
+    top: 25px;
+    right: 3%;
+    width: 50px;
+}
+
+.choice {
+    margin-top: 25px;
+    display: flex;
+    justify-content: space-evenly;
+    border-bottom: 1px solid #9E1326;
+}
+
+#login, #register {
+    letter-spacing: 0.7px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 33%;
+    font-size: 2vmax;
+    font-weight: 700;
+    background-color: white;
+}
+
+.active {
+    color: #9E1326;
+    border: 1px solid #9E1326;
+    border-bottom: 0
+}
+
+.active div {
+    background-color: white;
+    height: 1px;
+    position: relative;
+    top: 11px;
+    width: 100%;
+    padding-left: 12px;
+    transform: translateX(-6px);
+}
+
+.inactive {
+    border: 0;
+}
+
+iframe {
+    width: 100%;
+}
+
+.login-height {
+    height: 60vh;
+}
+
+.register-height {
+    height: 125vh;
+}
+
+.entry-content {
+    overflow: hidden;
+}
+
+.entry-content * {
+    font-size: 5vh;
+    line-height: 8vh;
+}
+
+form {
+    width: 75%;
+    height: 100%;
+    margin: 50px auto;
+}
+
+form input {
+    width: 100%;
+    border-radius: 10px;
+    margin-top: 5px;
+    margin-bottom: 20px;
+}
+
+.button {
+    background-color: #9E1326;
+    color: white;
+    border: 0;
+    font-weight: 700;
+    padding: 5px 0;
+    margin-bottom: 10px;
+}
+
+.forgot-password {
+    color: #9E1326;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.forgot-password:hover {
+    text-decoration: underline;
+}
+
+.register-container {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.register-container * {
+    font-size: 2.5vh;
+    line-height: 4vh;
+}
+
+p {
+    margin: 0;
+}
+
+.radio-container {
+    margin-bottom: 15px;
+}
+
+.radio {
+    width: 10%;
+    margin: 0;
+    transform: scale(1.5);
+    accent-color: #9E1326;
+}
+
+.checkbox-container {
+    display: flex;
+}
+
+.checkbox {
+    transform: scale(1.7);
+    width: 20%;
+    height: 100%;
+    margin-left: 0;
+    margin-right: 10px;
+    accent-color: #9E1326;
+}
+
+.checkbox ~ label {
+    font-size: 2vh;
+    line-height: 2.5vh;
+}
+
+#register-button {
+    margin-top: 20px;
+    font-size: 2.7vh;
+    line-height: 4.2vh;
+}
+
+.left, .right {
+    width: 90%;
+    margin: 0 20px 20px 20px;
+}
+
+.right * {
+    margin: 0;
+    font-size: 2.2vh;
+    line-height: 3vh;
+}
+
+@media only screen and (max-width: 600px) {
+    .register-height {
+        height: 150vh;
+    }
+
+    .register-container * {
+        font-size: 20px;
+        line-height: 24px;
+    }
+
+    .checkbox ~ label {
+        font-size: 16px;
+        line-height: 20px;
+    }
+
+    .register-container{
+        display: block;
+    }
+
+    form {
+        margin: 0;
+        width: 100%;
+    }
+
+    .right, .left {
+        width: 100%;   
+        margin: 0;
+        padding: 0;
+    }
+}

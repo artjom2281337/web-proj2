@@ -1,0 +1,251 @@
+
+#cart-display {
+    width: 80%;
+    max-width: 1500px;
+    /* height: 1000px; */
+    margin: 35px auto;
+    padding-bottom: 100px;
+}
+
+#cart-title {
+    font-size: 30px;
+    font-weight: 600;
+    margin-right: 15px;
+    margin-left: 20px;
+}
+
+#cart-count {
+    color: gray;
+    font-size: 20px;
+}
+
+#cart-content {
+    display: flex;
+    margin-top: 20px;
+}
+
+.cart-item {
+    height: 200px;
+    border: 3px solid black;
+    margin-bottom: 15px;
+
+    border: 1px solid rgb(220, 220, 220);
+    border-radius: 20px;
+    background-color: white;
+}
+
+#cart-left { 
+    flex: 1;
+    margin: 15px;
+}
+
+aside#cart-total {
+    width: 450px;
+    margin-top: 15px;
+    height: 100%;
+    
+    border: 1px solid rgb(220, 220, 220);
+    border-radius: 20px;
+    background-color: white;
+}
+
+.cart-item {
+    display: flex;
+}
+
+.cart-item-img {
+    width: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cart-item-img img {
+    height: 150px;
+}
+
+.cart-item-content {
+    display: flex;
+    flex-direction: column;
+    padding: 30px 20px;
+    flex: 1
+}
+
+.cart-item-content-top {
+    display: flex;
+    flex: 1;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.cart-item-name {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2; 
+    -webkit-box-orient: vertical;
+    font-size: 25px;
+}
+
+.cart-item-price {
+    font-size: 25px;
+    color: rgb(209, 98, 0);
+    font-weight: 900;
+    margin-left: 10px;
+}
+
+.cart-item-content-bot {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cart-item-content-bot a {
+    text-decoration: none;
+    color: gray;
+    display: flex;
+    align-items: flex-end;
+}
+
+.cart-delete {
+    display: flex;
+    width: 180px;
+}
+
+.cart-delete img {
+    height: 30px;
+    padding-right: 10px;
+}
+
+.cart-addition {
+    display: flex;
+    align-items: center;
+}
+
+.cart-addition span {
+    margin: 10px;
+}
+
+.cart-addition button {
+    width: 40px;
+    height: 40px;
+    font-size: 30px;
+    border: 1px solid rgb(200, 200, 200);
+    border-radius: 5px;
+}
+
+#cart-total {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+#cart-summary > * {
+    display: flex;
+    justify-content: space-between;
+    height: 30px;
+}
+
+#cart-bot {
+    padding-top: 30px;
+    padding-bottom: 10px;
+    border-bottom: 3px solid rgb(200, 200, 200);
+    font-size: 18px;
+}
+
+.cbold {
+    font-weight: 900;
+}
+
+.cgray {
+    color: rgb(170, 170, 170);
+}
+
+#cart-delivery {
+    padding-top: 20px;
+    padding-bottom: 10px;
+    border-bottom: 3px solid rgb(200, 200, 200);
+}
+
+#cart-delivery input {
+    height: 30px;
+    width: 30px;
+}
+
+.cart-delivery-option {
+    display: flex;
+}
+
+.cart-delivery-option input {
+    accent-color: orange;
+}
+
+.cart-delivery-desc {
+    padding-left: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.cart-delivery-desc label  {
+    display: inline-block;
+    font-size: 21px;
+}
+
+.cart-delivery-desc p {
+    color: gray;
+    margin-top: 5px;
+}
+
+#cart-proceed button {
+    margin: 15px auto;
+    font-weight: bolder;
+    margin-bottom: 0px;
+    width: 100%;
+    height: 50px;
+    font-size: 25px;
+    background-color: rgb(255, 98, 0);
+    color: white;
+    border-radius: 15px;
+    border: none;
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 1000px) {
+    #cart-content {
+        flex-wrap: wrap;
+    }
+
+    aside#cart-total {
+        margin: 15px;
+        width: 100%;
+    }
+
+    .cart-delete {
+        width: 180px;
+    }
+}
+
+@media only screen and (max-width: 760px) {
+    .cart-delete {
+        width: 100px;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .cart-item {
+        flex-direction: column;
+        height: 350px;
+    }
+
+    .cart-item-img {
+        margin: auto;
+    }
+
+    #cart-proceed button {
+        font-size: 20px;
+    }
+
+    .cart-delete {
+        width: 150px;
+    }
+}

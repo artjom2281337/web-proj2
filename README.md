@@ -1,4 +1,4 @@
-# Web programming - MMarket
+# Web programming - MMarket - Group 7
 ## Tasks
 - [ ] **Dynamic Header & Footer**
 - [ ] **User table**
