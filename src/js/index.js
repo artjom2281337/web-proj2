@@ -1,3 +1,13 @@
+// responsive navbar
+
+const navbarDiv = document.getElementById("resp-nav");
+
+const navButton = document.getElementById("menu-button");
+const navButton2 = document.getElementById("menu-button2");
+
+navButton.addEventListener("click", () => navbarDiv.classList.toggle("active"));
+navButton2.addEventListener("click", () => navbarDiv.classList.toggle("active"));
+
 // Products
 const products = document.getElementsByClassName("carousel-item");
 const products2 = document.getElementsByClassName("carousel-item-2");

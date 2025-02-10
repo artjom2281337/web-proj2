@@ -29,17 +29,13 @@ header {
     font-size: 28px;
 }
 
-header button {
+header button, nav button {
     padding: 10px;
     height: 50px;
     background-color: white;
     border: none;
     border-radius: 10px;
     cursor: pointer;
-}
-
-header button:hover {
-    background-color: rgb(255, 224, 212);
 }
 
 header a {
@@ -79,7 +75,7 @@ header img {
     font-size: 15px;
 }
 
-#logo-container {
+.logo-container {
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -88,9 +84,10 @@ header img {
     font-size: 20px;
 }
 
-#logo-container img {
+.logo-container img {
     width:50px;
     margin-right: 10px;
+    margin-left: 10px;
 }
 
 #searchbar-div {
@@ -110,6 +107,80 @@ header input {
     border: 1px solid rgb(225, 225, 225);
     background-color: rgb(245, 245, 245);
 }
+
+#resp-nav {  /* inactive in initial */
+    width: 80%;
+    max-width: 500px;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: -550px;
+
+    background-color: white;
+    border: 2px solid rgb(230, 230, 230);
+    border-top: none;
+    /* border-radius: 0 0 30px 0; */
+
+    padding: 20px;
+
+    font-size: 20px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#resp-nav.active {
+    left: 5px;
+}
+
+#logo-div-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-top: -20px;
+}
+
+nav button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+nav button img {
+    width: 40px;
+}
+
+#resp-nav li {
+    list-style-type: none;
+}
+
+#resp-nav a {
+    color: rgb(70, 70, 70);
+    text-decoration: none;
+}
+
+#resp-nav a:hover {
+    text-decoration: underline;
+}
+
+#resp-nav {
+    line-height: 35px;
+}
+
+.nav-bottom {
+    margin-bottom: 50px;
+    font-size: 15px;
+    line-height: 20px;
+    /* text-align: center; bad design */
+}
+
+#resp-nav .button-n {
+    margin: 10px 40px;
+}
+
+/* ---------------------------- FOOTER -------------------------------- */
 
 footer{
     background-color: rgb(217, 217, 217);
@@ -139,7 +210,7 @@ footer{
     display: inline-block;
     padding: 10px 20px;
     margin-top: 10px;
-    background-color: #d9d9d9;
+    background-color: #ffb685;
     border: 1px solid;
     border-radius: 5px;
     text-align: center;
