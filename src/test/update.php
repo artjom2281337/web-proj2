@@ -35,7 +35,12 @@ if($result ->num_rows > 0) {
 <td><?php echo $row["lname"]; ?></td>
 <td><?php echo $row["email"]; ?></td>
 <td><?php echo $row["password"]; ?></td>
-<td><?php echo $row["iscorp"]; ?></td>
+<td><?php
+    if ($row["iscorp"] == 1) {
+        echo "Yes";
+    } else {
+        echo "No";
+    } ?></td>
 <td><a href="updatesingle.php?id=<?php echo $row['userid']; ?>">Update</a></td>
 <td><a href="delete.php?id=<?php echo $row['userid']; ?>">Delete</a></td>
 </tr>

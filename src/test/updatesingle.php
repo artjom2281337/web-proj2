@@ -1,6 +1,11 @@
 <?php
 include 'db.php';
-$a = $_GET['userid'];
+
+if (isset($_GET['userid'])) {
+    $a = $_GET['userid'];
+} else {
+    echo "smth is wrong";
+}
 $result = mysqli_query($conn,"SELECT * FROM users WHERE userid= '$a'");
 $row= mysqli_fetch_array($result);
 ?>
