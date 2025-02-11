@@ -7,7 +7,7 @@ const navButton2 = document.getElementById("menu-button2");
 navButton.addEventListener("click", () => navbarDiv.classList.toggle("active"));
 navButton2.addEventListener("click", () => navbarDiv.classList.toggle("active"));
 
-if (document.location.href.endsWith("index.php")) {
+if (document.location.href.includes("index.php")) {
     carousel()
     favoriteItem()
 }

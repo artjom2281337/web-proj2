@@ -2,11 +2,11 @@
     <link rel="stylesheet" href="css/entry.css">
 </head>
 <body class="entry-content">
-    <form>
-        <label for="username">Username/Email</label><br>
-        <input class="input" type="text" id="username" name="username"><br>
+    <form action="login.php" method="POST">
+        <label for="email">Email</label><br>
+        <input class="input" type="text" id="email" name="email" required><br>
         <label for="password">Password</label><br>
-        <input class="input" type="password" id="password" name="password"><br>
+        <input class="input" type="password" id="password" name="password" required><br>
         <input class="button" id="login-button" type="submit" value="LOGIN">
         <a href="" class="forgot-password">Forgot your password? Click here.</a>
     </form>

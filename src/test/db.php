@@ -1,6 +1,6 @@
 <?php
 $servername="db";
-$username="mmarket";
+$username="root";
 $password="password";
 $dbname ="mmarket";
 // creating connection 
