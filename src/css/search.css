@@ -1,0 +1,91 @@
+#search-main {
+    width: 80%;
+    max-width: 1500px;
+    margin: 30px auto;
+}
+
+#search-results {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+
+    margin-top: 20px;
+    margin-bottom: 100px;
+}
+
+.search-item {
+    width: 300px;
+    border: 1px solid rgb(200, 200, 200);
+    background-color: white;
+    border-radius: 15px;
+    padding: 15px;
+    margin: 15px;
+    height: 400px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.search-item-top {
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+}
+
+.search-item-top > img {
+    width: 300px;
+    margin: 25px auto;
+}
+
+.search-item-top-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.search-item-top-head button {
+    border: none;
+    background-color: transparent;
+}
+
+.search-item-top-head img {
+    width: 30px;
+}
+
+.search-item-bot {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.search-item-bot > p {
+    margin-bottom: 20px;
+    margin-top: 30px;
+}
+
+.search-item-bot > button {
+    margin-top: 10px;
+    font-size: 20px;
+    border-radius: 5px;
+    border: none;
+    background-color: orangered;
+    color: white;
+    padding: 5px;
+}
+
+.search-item-bot button a {
+    text-decoration: none;
+    color: white;
+}
+
+.search-item-price > span:first-child {
+    font-size: larger;
+    font-weight: 600;
+}
+
+.discount-tag {
+    color: orangered;
+    font-weight: 600;
+    font-size: large;
+}

@@ -30,7 +30,7 @@
 
         <div class="searchbar">
             <div id="seachbar-div">
-                <input type="text" size="45" placeholder="Search...">
+                <input type="search" size="45" placeholder="Search...">
             </div>
         </div>
 

@@ -124,13 +124,16 @@ header input {
     padding: 20px;
 
     font-size: 20px;
+    line-height: 35px;
 
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+
+    z-index: 10;
 }
 
-#resp-nav.active {
+#resp-nav.nav-active {
     left: 5px;
 }
 
@@ -163,10 +166,6 @@ nav button img {
 
 #resp-nav a:hover {
     text-decoration: underline;
-}
-
-#resp-nav {
-    line-height: 35px;
 }
 
 .nav-bottom {

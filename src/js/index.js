@@ -5,8 +5,8 @@ const navbarDiv = document.getElementById("resp-nav");
 const navButton = document.getElementById("menu-button");
 const navButton2 = document.getElementById("menu-button2");
 
-navButton.addEventListener("click", () => navbarDiv.classList.toggle("active"));
-navButton2.addEventListener("click", () => navbarDiv.classList.toggle("active"));
+navButton.addEventListener("click", () => navbarDiv.classList.toggle("nav-active"));
+navButton2.addEventListener("click", () => navbarDiv.classList.toggle("nav-active"));
 
 // Products
 const products = document.getElementsByClassName("carousel-item");
