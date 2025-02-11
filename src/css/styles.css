@@ -38,6 +38,10 @@ header button, nav button {
     cursor: pointer;
 }
 
+header button:hover {
+    background-color: rgb(255, 224, 212);
+}
+
 header a {
     text-decoration: none;
 }
@@ -115,6 +119,7 @@ header input {
     position: fixed;
     top: 0;
     left: -550px;
+    z-index: 200;
 
     background-color: white;
     border: 2px solid rgb(230, 230, 230);
@@ -124,17 +129,16 @@ header input {
     padding: 20px;
 
     font-size: 20px;
-    line-height: 35px;
 
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-
-    z-index: 10;
+    transition: left 0.7s ease-in-out;
 }
 
-#resp-nav.nav-active {
+#resp-nav.active {
     left: 5px;
+    transition: left 0.7s ease-in-out;
 }
 
 #logo-div-nav {
@@ -166,6 +170,10 @@ nav button img {
 
 #resp-nav a:hover {
     text-decoration: underline;
+}
+
+#resp-nav {
+    line-height: 35px;
 }
 
 .nav-bottom {

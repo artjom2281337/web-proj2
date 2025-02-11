@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MMarket - <?php echo $title; ?></title>
     <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href=<?php echo "css/$css_file.css" ?>>
+    <link rel="stylesheet" href=<?php echo "css/$css_file.css"; ?>>
     <link rel="icon" href="img/logo.png">
 </head>
 
@@ -85,7 +85,7 @@
         <ul class="nav-bottom">
             <li><span>MMarket</span></li>
             <li><span><?php echo date(DATE_RFC822); ?></span></li> <!-- https://www.w3schools.com/php/func_date_date.asp -->
-            <li><span><b>All rights reversed.</b></span></li>
+            <li><span><b>© All rights reversed.</b></span></li>
         </ul>
 
     </nav>

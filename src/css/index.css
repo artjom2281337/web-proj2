@@ -153,6 +153,10 @@
     border-radius: 10px;
 }
 
+#main-mem-info button:hover {
+    cursor: pointer;
+}
+
 .discount-tag {
     color: orangered;
     font-weight: 600;
@@ -164,7 +168,7 @@
     user-select: none;
 }
 
-.main-items-1 p {
+.main-items-1 p, #main-discount p {
     font-size: 20px;
     margin-bottom: 40px;
 }
@@ -184,7 +188,7 @@
     margin: 0 auto;
 }
 
-.carousel-item, .carousel-item-2 {
+.carousel-item, .carousel-item-discount {
     display: none;
     position: absolute;
     width: 175px;
@@ -197,16 +201,16 @@
     z-index: 0;
 }
 
-.active {
+div.active {
     display: block;
     left: 175px;
     z-index: 3;
-    box-shadow: 10px 10px rgba(0, 0, 0, 0.7);
+    box-shadow: 10px 10px rgba(0, 0, 0, 0.4);
     transform: scale(1.1);
     transition: left 1s, box-shadow 1s, transform 1s;
 }
 
-.active-left {
+div.active-left {
     display: block;
     left: 0px;
     z-index: 1;
@@ -215,7 +219,7 @@
     transition: left 1s, box-shadow 1s, transform 1s, z-index 3s;
 }
 
-.active-right {
+div.active-right {
     display: block;
     left: 350px;
     z-index: 2;
@@ -228,6 +232,7 @@
     height: 50%;
     display: flex;
     flex-direction: column;
+    cursor: pointer;
 }
 
 .main-items-1-div-top-head {
@@ -243,6 +248,7 @@
 
 .main-items-1-div-top-head img {
     width: 30px;
+    cursor: pointer;
 }
 
 .main-items-1-div-bot {
@@ -250,10 +256,6 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-}
-
-.main-items-1-div-bot > p {
-    margin-bottom: 20px;
 }
 
 .main-items-1-div-bot > button {
@@ -399,6 +401,10 @@
     margin-top: 30px;
 }
 
+#main-job-info button:hover {
+    cursor: pointer;
+}
+
 @media only screen and (max-width: 1000px) {
     #main-items-1-content {
         flex-direction: column;
@@ -460,16 +466,16 @@
         width: 330px;
     }
     
-    .carousel-item, .carousel-item-2 {
+    .carousel-item, .carousel-item-discount {
         width: 100px;
         margin: auto 0;
     }
 
-    .active {
+    div.active {
         left: 100px;
     }
     
-    .active-right {
+    div.active-right {
         left: 200px;
     }
 

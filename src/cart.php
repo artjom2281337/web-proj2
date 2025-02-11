@@ -1,6 +1,12 @@
 <?php 
     $title = "Cart";
     $css_file = "cart";
+
+    // Item to add
+    if (isset($_GET["id"])) {
+        $new_item_id = $_GET["id"];
+    }
+
     include("header.php");
 ?>
 

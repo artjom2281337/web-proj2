@@ -61,6 +61,9 @@
         </div>
     </footer>
 
+    <script src="js/buttonClick.js"></script>
+    <script src="js/favoriteItem.js"></script>
+    <script src="js/carousel.js">  </script>
     <script src="js/index.js"></script>
 </body>
 </html>
