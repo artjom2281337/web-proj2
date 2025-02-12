@@ -1,19 +1,17 @@
 <?php
     require 'test/db.php' ;
+
+    // ID of item to load
+    $item_id = $_GET["itemid"];
+
     $sql = "SELECT * FROM items WHERE itemid='$item_id'";
     $result = $conn -> query($sql);
 
     // HTML variables
     $title = "Item Page";
     $css_file = "item";
-
-    // ID of item to load
-    $item_id = $_GET["itemid"];
     
     // Database variables
-    // TODO: Get this information from database
-
-
 
     if ($result -> num_rows > 0) {
         while($row = $result -> fetch_assoc()){
