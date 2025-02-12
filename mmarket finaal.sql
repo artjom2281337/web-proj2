@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: db
--- Generation Time: Feb 12, 2025 at 02:03 PM
+-- Generation Time: Feb 12, 2025 at 02:08 PM
 -- Server version: 8.0.34
 -- PHP Version: 8.2.27
 
@@ -160,6 +160,12 @@ ALTER TABLE `cart`
 --
 ALTER TABLE `items`
   MODIFY `itemid` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `jobs`
+--
+ALTER TABLE `jobs`
+  MODIFY `job_id` int NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `users`
