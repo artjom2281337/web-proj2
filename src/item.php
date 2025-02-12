@@ -1,4 +1,7 @@
 <?php
+    require 'test/db.php' ;
+    $sql = "SELECT * FROM items WHERE itemid='$item_id'";
+    $result = $conn -> query($sql);
 
     // HTML variables
     $title = "Item Page";
@@ -10,27 +13,26 @@
     // Database variables
     // TODO: Get this information from database
 
-    require 'test/db.php' ;
 
-    $sql = "SELECT * FROM items WHERE itemid='$item_id'";
-    $result = $conn -> query($sql);
 
     if ($result -> num_rows > 0) {
-        $row = $result -> fetch_assoc();
+        while($row = $result -> fetch_assoc()){
 
-    $item_name = $row['item_name'];
-    $type = $row['item_type'];
-    $item_company = $row['company'];
-    $item_image = $row['img'];
-    $item_price = $row['price'];
-    $item_price_per_kg = $row['price_kilo'];
-    $item_country = $row['country'];
-    $ingred= $row['ingred'];
-    $allerg= $row['allergies'];
-    $item_favorite = true;
-
+            
+            $item_name = $row['item_name'];
+            $type = $row['item_type'];
+            $item_company = $row['company'];
+            $item_image = $row['img'];
+            $item_price = $row['price'];
+            $item_price_per_kg = $row['price_kilo'];
+            $item_country = $row['country'];
+            $ingred= $row['ingred'];
+            $allerg= $row['allergies'];
+            $item_favorite = true;
+            
+        }
     }
-
+    $conn->close();
     
     include("header.php");
 ?>
