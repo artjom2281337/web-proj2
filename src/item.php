@@ -5,18 +5,32 @@
     $css_file = "item";
 
     // ID of item to load
-    $item_id = $_GET["id"];
+    $item_id = $_GET["itemid"];
     
     // Database variables
     // TODO: Get this information from database
-    $item_name = "Banana";
-    $type = "Fruit";
-    $item_company = "Mother Nature co.";
-    $item_image = "img/items/banana.png";
-    $item_price = 1.03;
-    $item_price_per_kg = 5.91;
-    $item_country = "Guatemala";
+
+    require 'test/db.php' ;
+
+    $sql = "SELECT * FROM items WHERE itemid='$item_id'";
+    $result = $conn -> query($sql);
+
+    if ($result -> num_rows > 0) {
+        $row = $result -> fetch_assoc();
+
+    $item_name = $row['item_name'];
+    $type = $row['item_type'];
+    $item_company = $row['company'];
+    $item_image = $row['img'];
+    $item_price = $row['price'];
+    $item_price_per_kg = $row['price_kilo'];
+    $item_country = $row['country'];
+    $ingred= $row['ingred'];
+    $allerg= $row['allergies'];
     $item_favorite = true;
+
+    }
+
     
     include("header.php");
 ?>
@@ -68,14 +82,14 @@
                         <img src="img/contains.png" alt="">
                         <div>
                             <span>Ingredients</span> <br>
-                            <span>Deadly amount of potassium</span>
+                            <span><?php echo $ingred; ?></span>
                         </div>
                     </div>
                     <div class="info-div">
                         <img src="img/allergens.png" alt="">
                         <div>
                             <span>Allergens</span> <br>
-                            <span>None</span>
+                            <span><?php echo $allerg ?></span>
                         </div>
                     </div>
                 </section>
