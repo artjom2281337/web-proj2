@@ -1,7 +1,6 @@
 <?php
     require 'test/db.php' ;
 
-    // TODO: Get data from database with $id
     if ($dicsount) {
         $class = "carousel-item-discount";
     } else {

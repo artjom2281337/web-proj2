@@ -30,7 +30,10 @@
 
         <div class="searchbar">
             <div id="seachbar-div">
-                <input type="search" size="45" placeholder="Search...">
+                <form method="get" action="search.php">
+                    <input type="search" name="search" size="45" placeholder="Search...">                    
+                    <button type="submit">Search...</button>
+                </form>
             </div>
         </div>
 
