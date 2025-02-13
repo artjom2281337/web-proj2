@@ -54,7 +54,7 @@ if ($dicsount) {
         <p><?php echo $item_name; ?></p>
         <div class="main-items-1-div-bot-price">
             <span><?php echo "$item_price €"; ?></span> <br>
-            <span><?php echo "$item_price €"; ?>/kg</span>
+            <span><?php echo "$item_price_per_kg €"; ?>/kg</span>
         </div>
         <button><a href=<?php echo "cart.php?id=$item_id"; ?>>Add to cart!</a></button>
     </div>
