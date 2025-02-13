@@ -2,8 +2,9 @@
     require 'test/db.php' ;
 
     // ID of item to load
-    $item_id = $_GET["itemid"];
+    $item_id = $_GET["id"];
 
+    // Select
     $sql = "SELECT * FROM items WHERE itemid='$item_id'";
     $result = $conn -> query($sql);
 
@@ -12,11 +13,9 @@
     $css_file = "item";
     
     // Database variables
-
     if ($result -> num_rows > 0) {
         while($row = $result -> fetch_assoc()){
 
-            
             $item_name = $row['item_name'];
             $type = $row['item_type'];
             $item_company = $row['company'];
@@ -30,8 +29,11 @@
             
         }
     }
+
+    // Close connection
     $conn->close();
     
+    // Header
     include("header.php");
 ?>
 

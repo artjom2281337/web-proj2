@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: db
--- Generation Time: Feb 12, 2025 at 02:08 PM
+-- Generation Time: Feb 13, 2025 at 01:39 PM
 -- Server version: 8.0.34
 -- PHP Version: 8.2.27
 
@@ -53,7 +53,7 @@ CREATE TABLE `fav_items` (
 CREATE TABLE `items` (
   `itemid` int NOT NULL,
   `item_name` varchar(50) DEFAULT NULL,
-  `img` varbinary(8000) DEFAULT NULL,
+  `img` varchar(50) DEFAULT NULL,
   `price` float DEFAULT NULL,
   `price_kilo` float DEFAULT NULL,
   `item_type` varchar(50) DEFAULT NULL,
@@ -68,7 +68,8 @@ CREATE TABLE `items` (
 --
 
 INSERT INTO `items` (`itemid`, `item_name`, `img`, `price`, `price_kilo`, `item_type`, `country`, `company`, `ingred`, `allergies`) VALUES
-(1, 'Banana', 0x31, 1, 2, 'Fruit', 'Guatemala', 'BananaGuatenana', 'Calcium', 'Many');
+(1, 'Banana', 'img/items/fruits/banana.png', 1, 2, 'Fruit', 'Guatemala', 'BananaGuatenana', 'Calcium', 'Many'),
+(2, 'Apple', 'img/items/fruits/apple.png', 0.5, 2.3, 'fruit', 'Appland', 'Apple', 'Yummy', 'Doctors');
 
 -- --------------------------------------------------------
 
@@ -159,7 +160,7 @@ ALTER TABLE `cart`
 -- AUTO_INCREMENT for table `items`
 --
 ALTER TABLE `items`
-  MODIFY `itemid` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `itemid` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `jobs`

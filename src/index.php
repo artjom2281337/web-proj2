@@ -29,7 +29,7 @@
                     
                         // TODO: Get items from database that you want to show here
                         
-                        for ($i = 0; $i < 5; $i++) {
+                        for ($i = 1; $i < 5; $i++) {
                             $id = $i;
                             include("carousel-item.php");
                         }

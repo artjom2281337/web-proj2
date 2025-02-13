@@ -1,25 +1,21 @@
 <?php
     require 'test/db.php' ;
 
-// TODO: Get data from database with $id
-if ($dicsount) {
-    $class = "carousel-item-discount";
-} else {
-    $class = "carousel-item";
-}
+    // TODO: Get data from database with $id
+    if ($dicsount) {
+        $class = "carousel-item-discount";
+    } else {
+        $class = "carousel-item";
+    }
 
-
-    // ID of item to load
-    $item_id = $_GET["itemid"];
-
-    $sql = "SELECT * FROM items WHERE itemid='$item_id'";
+    // Load item
+    $sql = "SELECT * FROM items WHERE itemid='$id'";
     $result = $conn -> query($sql);
 
-
+    // Get data
     if ($result -> num_rows > 0) {
         while($row = $result -> fetch_assoc()){
 
-            
             $item_name = $row['item_name'];
             $type = $row['item_type'];
             $item_company = $row['company'];
@@ -33,6 +29,8 @@ if ($dicsount) {
             
         }
     }
+
+    // Close connection
     $conn->close();
 
 ?>
@@ -45,7 +43,7 @@ if ($dicsount) {
             <img src=<?php if ($item_favorite) {
                             echo "img/full_heart.png";
                         } else { echo "img/heart.png"; }?>>
-                <param name="item-id" value=<?php echo $item_id; ?>>
+                <param name="item-id" value=<?php echo $id; ?>>
             </button>
         </div>        
         <img src=<?php echo "$item_image alt=$item_name"; ?> onclick="goToItem(<?php echo $id; ?>)">
@@ -56,6 +54,6 @@ if ($dicsount) {
             <span><?php echo "$item_price €"; ?></span> <br>
             <span><?php echo "$item_price_per_kg €"; ?>/kg</span>
         </div>
-        <button><a href=<?php echo "cart.php?id=$item_id"; ?>>Add to cart!</a></button>
+        <button><a href=<?php echo "cart.php?id=$id"; ?>>Add to cart!</a></button>
     </div>
 </div>
