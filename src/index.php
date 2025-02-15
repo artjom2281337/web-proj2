@@ -1,7 +1,12 @@
 <?php
+    session_start();
+
     $title = "Main Menu";
     $css_file = "index";
     include("header.php");
+
+    // login session check
+    $loggedIn = isset($_SESSION["userid"]);
 ?>
 
     <main id="main-main">

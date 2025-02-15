@@ -24,7 +24,7 @@
             $item_country = $row['country'];
             $ingred= $row['ingred'];
             $allerg= $row['allergies'];
-            $item_favorite = true;
+            $item_favorite = false;
             
         }
     }

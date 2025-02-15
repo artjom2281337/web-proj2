@@ -7,7 +7,7 @@
     <article>
         <div id="container">
             <div class="top-row">
-                <a href="index.html"><img src="img/entry-icon.png" alt="Entry icon"></a>
+                <a href="index.php"><img src="img/entry-icon.png" alt="Entry icon"></a>
             </div>
             <div class="choice">
                 <button type="button" id="login" class="active" onclick="setActive('login', 'register')">LOGIN

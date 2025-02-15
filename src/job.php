@@ -1,9 +1,11 @@
 <?php
+    require 'test/db.php';
+    session_start();
+
     $title = "Jobs";
     $css_file = "job";
     include("header.php");
-
-    require 'test/db.php';
+    
     $sql = "SELECT * FROM jobs LIMIT 2";
     $result = $conn->query($sql);
 ?>

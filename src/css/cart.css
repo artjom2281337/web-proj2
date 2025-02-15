@@ -61,7 +61,8 @@ aside#cart-total {
 }
 
 .cart-item-img img {
-    height: 150px;
+    max-height: 150px;
+    max-width: 150px;
 }
 
 .cart-item-content {

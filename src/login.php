@@ -1,5 +1,6 @@
 <?php
-    
+    session_start();
+
     // Database
     require "test/db.php";
 
@@ -13,15 +14,16 @@
 
     // Check if user exists
     if ($result -> num_rows > 0) {
-        while($row = $result -> fetch_assoc()) {
+        $row = $result -> fetch_assoc();
             if ($row["password"] == $password) { // Correct password -> go to main page as locked user
-                $id = $row["userid"];
-                echo "<script>top.window.location = 'index.php?id=$id'</script>";
+                $_SESSION["userid"] = $row["userid"];
+                $_SESSION["email"] = $email;
+                echo "<script>top.window.location = 'index.php?id={$_SESSION['userid']}'</script>";
             } else { // Incorrect password
                 echo "<script>alert('Email or password is incorrect')</script>";
                 include "login.html";
             }
-        }
+        
     } else { // User doesn't exist
         echo "<script>alert('$email doesn\'t exist.')</script>";
         include "login.html";

@@ -27,6 +27,9 @@
 
 #item-image {
     height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 #item-top {
@@ -37,6 +40,8 @@
 
 #item-image img{
     width: 100%;
+    max-width: 500px;
+    max-height: 500px;
 }
 
 #item-image {
@@ -77,6 +82,7 @@
 #item-buttons {
     display: flex;
     height: 50px;
+    align-items: center;
 }
 
 #item-buttons button a {
@@ -88,10 +94,15 @@
     text-decoration: none;
 }
 
-#item-buttons > * {
+#item-buttons button {
+    height: 100%;
     border-radius: 10px;
     border: 0;
     cursor: pointer;
+}
+
+#item-buttons form {
+    height: 100%;
 }
 
 #item-add-to-fav {

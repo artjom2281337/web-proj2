@@ -31,20 +31,30 @@
         <div class="searchbar">
             <div id="seachbar-div">
                 <form method="get" action="search.php">
-                    <input type="search" name="query" size="45" placeholder="Search...">                    
+                    <input type="search" name="query" size="45" placeholder="Search...">
                     <button type="submit">Search...</button>
                 </form>
             </div>
         </div>
 
         <div class="entry">
-            <a href="entry.php">
-                <button id="login-button">
-                    <img src="img/user.png" alt="Login">
-                    <span>Login</span>
-                </button>
-            </a>
+            <?php if (isset($_SESSION["userid"])): ?> <!-- logged in -->
+                <a href="logout.php">
+                    <button id="login-button">
+                        <img src="img/logout.png" alt="Logout">
+                        <span>Logout</span>
+                    </button>
+                </a>
+            <?php else: ?> <!-- not logged in -->
+                <a href="entry.php">
+                    <button id="login-button">
+                        <img src="img/user.png" alt="Login">
+                        <span>Login</span>
+                    </button>
+                </a>
+            <?php endif; ?>
         </div>
+
 
         <div class="cart">
             <a href="cart.php">
@@ -80,14 +90,17 @@
 
         <ul>
             <li><a href="#">Submit a feedback</a></li>
-            <li><a href="#">Preferences</a></li>
-            <li><a href="#">Settings</a></li>
-            <li><a href="#">Logout</a></li> <!-- should only appear while logged in, maybe whole ul? -->
+            <?php if (isset($_SESSION["userid"])): ?>
+                <li><a href="#">Preferences</a></li>
+                <li><a href="#">Settings</a></li>
+                <li><a href="logout.php">Logout</a></li>
+            <?php endif; ?>
         </ul>
 
         <ul class="nav-bottom">
             <li><span>MMarket</span></li>
-            <li><span><?php echo date(DATE_RFC822); ?></span></li> <!-- https://www.w3schools.com/php/func_date_date.asp -->
+            <li><span><?php echo date(DATE_RFC822); ?></span></li>
+            <!-- https://www.w3schools.com/php/func_date_date.asp -->
             <li><span><b>© All rights reversed.</b></span></li>
         </ul>
 
