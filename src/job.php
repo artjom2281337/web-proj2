@@ -4,15 +4,17 @@
     include("header.php");
 
     require 'test/db.php';
-    $sql = "SELECT * FROM jobs";
+    $sql = "SELECT * FROM jobs LIMIT 2";
     $result = $conn->query($sql);
 ?>
 
     <article>
         <div class="search-bar">
-            <input type="text" placeholder="Industry">
-            <input type="text" placeholder="Location or Postal Code">
-            <button>Search Jobs</button>
+            <form method="get" action="job_search.php">
+                <input type="search" name="industry" placeholder="Industry">
+                <input type="search" name="location" placeholder="Location or Postal Code">
+                <button type="submit">Search Jobs</button>
+            </form>
         </div>
 
         <div class="job-list">
