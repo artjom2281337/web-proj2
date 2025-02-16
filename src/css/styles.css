@@ -37,10 +37,10 @@ header button, nav button {
     border-radius: 10px;
     cursor: pointer;
 }
-
+/* 
 header button:hover {
     background-color: rgb(255, 224, 212);
-}
+} */
 
 header a {
     text-decoration: none;
@@ -100,6 +100,12 @@ header img {
 
 #searchbar-div input::placeholder {
     line-height: normal;
+}
+
+.searchbar form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 header input {

@@ -25,6 +25,11 @@ if ($result->num_rows > 0) {
         $quantity++;
     } elseif ($action == 'decrease' && $quantity > 1) {
         $quantity--;
+    } elseif ($action == 'decrease' && $quantity == 1) { // remove the item itself
+        $sql = "DELETE FROM cart WHERE cartid = ? AND userid = ?";
+        $stmt = $conn->prepare($sql);
+        $stmt->bind_param("ii", $cartid, $user_id);
+        $stmt->execute();
     }
 
     $sql = "UPDATE cart SET quantity = ? WHERE cartid = ? AND userid = ?";

@@ -2,6 +2,11 @@
 session_start();
 require 'test/db.php';
 
+if (!isset($_SESSION['userid'])) {
+    header("Location: entry.php");
+    exit();
+}
+
 $user_id = $_SESSION['userid'];
 
 $title = "Cart";

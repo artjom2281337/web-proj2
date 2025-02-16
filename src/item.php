@@ -45,8 +45,8 @@ include("header.php");
 ?>
 
 <main id="item-display">
-    <span id="item-category"><a href="#">Food</a> > <?php echo "<a href='$type'> $type </a>"; ?> > <a
-            href=""><?php echo $item_name ?></a></span>
+    <span id="item-category"><a href="#">Food</a> > <?php echo "<a href='search.php?query=$type'>" . ucfirst($type) . "</a>"; ?> > <a
+            href=""><?php echo ucfirst($item_name); ?></a></span>
     <article id="display-div">
         <section id="item-top">
             <div id="item-image">

@@ -32,7 +32,7 @@
             <div id="seachbar-div">
                 <form method="get" action="search.php">
                     <input type="search" name="query" size="45" placeholder="Search...">
-                    <button type="submit">Search...</button>
+                    <button type="submit"><img src="img/search.png" alt=""></button>
                 </form>
             </div>
         </div>

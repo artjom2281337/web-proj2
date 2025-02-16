@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: db
--- Generation Time: Feb 13, 2025 at 07:04 PM
+-- Generation Time: Feb 16, 2025 at 01:02 PM
 -- Server version: 8.0.34
 -- PHP Version: 8.2.27
 
@@ -28,10 +28,19 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `cart` (
-  `userid` int DEFAULT NULL,
-  `itemid` int DEFAULT NULL,
-  `count` int NOT NULL
+  `cartid` int NOT NULL,
+  `userid` int NOT NULL,
+  `itemid` int NOT NULL,
+  `quantity` int NOT NULL DEFAULT '1'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `cart`
+--
+
+INSERT INTO `cart` (`cartid`, `userid`, `itemid`, `quantity`) VALUES
+(10, 6, 3, 2),
+(11, 6, 2, 3);
 
 -- --------------------------------------------------------
 
@@ -40,9 +49,17 @@ CREATE TABLE `cart` (
 --
 
 CREATE TABLE `fav_items` (
-  `userid` int DEFAULT NULL,
-  `itemid` int DEFAULT NULL
+  `fav_id` int NOT NULL,
+  `userid` int NOT NULL,
+  `itemid` int NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `fav_items`
+--
+
+INSERT INTO `fav_items` (`fav_id`, `userid`, `itemid`) VALUES
+(6, 6, 3);
 
 -- --------------------------------------------------------
 
@@ -63,7 +80,7 @@ CREATE TABLE `items` (
   `allergies` varchar(50) DEFAULT NULL,
   `isDiscount` tinyint(1) NOT NULL DEFAULT '0',
   `discount_percentage` float DEFAULT NULL
-) ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Dumping data for table `items`
@@ -89,6 +106,22 @@ CREATE TABLE `jobs` (
   `postcode` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
+--
+-- Dumping data for table `jobs`
+--
+
+INSERT INTO `jobs` (`job_id`, `name`, `startdate`, `enddate`, `location`, `postcode`) VALUES
+(1, 'Cashier', '2024-01-15', '2024-12-31', 'Helsinki', '00100'),
+(2, 'CEO', '2024-02-01', '2024-08-01', 'Espoo', '02100'),
+(3, 'Store Manager', '2023-09-01', NULL, 'Vantaa', '01310'),
+(4, 'Hitman', '2024-03-10', '2024-09-10', 'Tampere', '33100'),
+(5, 'Logistic Manager', '2024-04-01', NULL, 'Oulu', '99100'),
+(6, 'Cleaner', '2024-01-05', '2024-06-30', 'Turku', '01100'),
+(7, 'Security Guard', '2024-02-15', NULL, 'Hämeenlinna', '11100'),
+(8, 'Cashier', '2024-03-20', '2024-09-30', 'Kuopio', '12100'),
+(9, 'Cashier', '2024-05-01', NULL, 'Lahti', '15100'),
+(10, 'Meat Department Worker', '2024-06-01', '2024-12-31', 'Rovaniemi', '10100');
+
 -- --------------------------------------------------------
 
 --
@@ -110,7 +143,9 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`userid`, `fname`, `lname`, `email`, `password`, `iscorp`) VALUES
 (4, 'fucker', 'motherfucker', 'fuckingfucker@fuck.com', 'fUckkk', 0),
-(5, '', '', '', 'd41d8cd98f00b204e9800998ecf8427e', 0);
+(5, '', '', '', 'd41d8cd98f00b204e9800998ecf8427e', 0),
+(6, 'a', 'a', 'a', '0cc175b9c0f1b6a831c399e269772661', 0),
+(7, 'b', 'b', 'b', '92eb5ffee6ae2fec3ad71c777531578f', 0);
 
 --
 -- Indexes for dumped tables
@@ -120,7 +155,7 @@ INSERT INTO `users` (`userid`, `fname`, `lname`, `email`, `password`, `iscorp`) 
 -- Indexes for table `cart`
 --
 ALTER TABLE `cart`
-  ADD PRIMARY KEY (`count`),
+  ADD PRIMARY KEY (`cartid`),
   ADD KEY `userid` (`userid`),
   ADD KEY `itemid` (`itemid`);
 
@@ -128,6 +163,7 @@ ALTER TABLE `cart`
 -- Indexes for table `fav_items`
 --
 ALTER TABLE `fav_items`
+  ADD PRIMARY KEY (`fav_id`),
   ADD KEY `userid` (`userid`),
   ADD KEY `itemid` (`itemid`);
 
@@ -157,25 +193,31 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `count` int NOT NULL AUTO_INCREMENT;
+  MODIFY `cartid` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+
+--
+-- AUTO_INCREMENT for table `fav_items`
+--
+ALTER TABLE `fav_items`
+  MODIFY `fav_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `items`
 --
 ALTER TABLE `items`
-  MODIFY `itemid` int NOT NULL AUTO_INCREMENT;
+  MODIFY `itemid` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `jobs`
 --
 ALTER TABLE `jobs`
-  MODIFY `job_id` int NOT NULL AUTO_INCREMENT;
+  MODIFY `job_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `userid` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `userid` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- Constraints for dumped tables
@@ -185,15 +227,15 @@ ALTER TABLE `users`
 -- Constraints for table `cart`
 --
 ALTER TABLE `cart`
-  ADD CONSTRAINT `cart_ibfk_1` FOREIGN KEY (`userid`) REFERENCES `users` (`userid`),
-  ADD CONSTRAINT `cart_ibfk_2` FOREIGN KEY (`itemid`) REFERENCES `items` (`itemid`);
+  ADD CONSTRAINT `cart_ibfk_1` FOREIGN KEY (`userid`) REFERENCES `users` (`userid`) ON DELETE CASCADE,
+  ADD CONSTRAINT `cart_ibfk_2` FOREIGN KEY (`itemid`) REFERENCES `items` (`itemid`) ON DELETE CASCADE;
 
 --
 -- Constraints for table `fav_items`
 --
 ALTER TABLE `fav_items`
-  ADD CONSTRAINT `fav_items_ibfk_1` FOREIGN KEY (`userid`) REFERENCES `users` (`userid`),
-  ADD CONSTRAINT `fav_items_ibfk_2` FOREIGN KEY (`itemid`) REFERENCES `items` (`itemid`);
+  ADD CONSTRAINT `fav_items_ibfk_1` FOREIGN KEY (`userid`) REFERENCES `users` (`userid`) ON DELETE CASCADE,
+  ADD CONSTRAINT `fav_items_ibfk_2` FOREIGN KEY (`itemid`) REFERENCES `items` (`itemid`) ON DELETE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -2,11 +2,16 @@
     require 'test/db.php';
     session_start();
 
+    /* if (!isset($_SESSION['userid'])) { <!-- in case you need user privileges for job page -->
+        header("Location: entry.php");
+        exit();
+    } */
+
     $title = "Jobs";
     $css_file = "job";
     include("header.php");
     
-    $sql = "SELECT * FROM jobs LIMIT 2";
+    $sql = "SELECT * FROM jobs LIMIT 5";
     $result = $conn->query($sql);
 ?>
 
