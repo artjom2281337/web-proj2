@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: db
--- Generation Time: Feb 16, 2025 at 01:02 PM
+-- Generation Time: Feb 16, 2025 at 02:50 PM
 -- Server version: 8.0.34
 -- PHP Version: 8.2.27
 
@@ -33,14 +33,6 @@ CREATE TABLE `cart` (
   `itemid` int NOT NULL,
   `quantity` int NOT NULL DEFAULT '1'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-
---
--- Dumping data for table `cart`
---
-
-INSERT INTO `cart` (`cartid`, `userid`, `itemid`, `quantity`) VALUES
-(10, 6, 3, 2),
-(11, 6, 2, 3);
 
 -- --------------------------------------------------------
 
@@ -89,7 +81,11 @@ CREATE TABLE `items` (
 INSERT INTO `items` (`itemid`, `item_name`, `img`, `price`, `price_kilo`, `item_type`, `country`, `company`, `ingred`, `allergies`, `isDiscount`, `discount_percentage`) VALUES
 (1, 'Banana', 'img/items/fruits/banana.png', 1, 2, 'fruit', 'Guatemala', 'BananaGuatenana', 'Calcium', 'Many', 1, 0.25),
 (2, 'Apple', 'img/items/fruits/apple.png', 0.5, 2.3, 'fruit', 'Appland', 'Apple', 'Yummy', 'Doctors', 0, NULL),
-(3, 'Coconut', 'img/items/fruits/coconut.png', 1, 1.5, 'fruit', 'Cocoland', 'Coco co.', 'Milk', 'Lactose', 1, 0.35);
+(3, 'Coconut', 'img/items/fruits/coconut.png', 1, 1.5, 'fruit', 'Cocoland', 'Coco co.', 'Milk', 'Lactose', 1, 0.35),
+(4, 'Milk', 'img/items/diary/milk.png', 2, 2, 'Dairy', 'Germany', 'DairyCo', 'Milk', 'Lactose', 1, 0.1),
+(5, 'Chocolate', 'img/items/diary/chocolate.png', 3.5, 20, 'Diary', 'Belgium', 'Sweet Treats', 'Cocoa, Sugar, Milk', 'Nuts', 0, NULL),
+(6, 'Bread', 'img/items/bakery/bread.png', 1.8, 3, 'Bakery', 'France', 'Boulangerie', 'Flour, Water, Yeast, Salt', 'Gluten', 1, 0.15),
+(7, 'Salmon', 'img/items/meat/salmon.png', 10.5, 21, 'Seafood', 'Norway', 'Ocean Fresh', 'Salmon', 'Fish', 0, NULL);
 
 -- --------------------------------------------------------
 
@@ -193,7 +189,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `cartid` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `cartid` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `fav_items`
@@ -205,7 +201,7 @@ ALTER TABLE `fav_items`
 -- AUTO_INCREMENT for table `items`
 --
 ALTER TABLE `items`
-  MODIFY `itemid` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `itemid` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `jobs`

@@ -29,9 +29,6 @@
         }
     }
 
-    // Close connection
-    $conn->close();
-
 ?>
 
 <div class=<?php echo $class; ?>>
@@ -53,6 +50,6 @@
             <span><?php echo "$item_price €"; ?></span> <br>
             <span><?php echo "$item_price_per_kg €"; ?>/kg</span>
         </div>
-        <button><a href=<?php echo "cart.php?id=$id"; ?>>Add to cart!</a></button>
+        <button><a href=<?php echo "item.php?id=$id"; ?>>Add to cart!</a></button>
     </div>
 </div>
