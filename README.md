@@ -7,7 +7,7 @@
 - [ ] **Favourite products table**
 - [ ] **Job table**
 - [x] **Database connection**
-- [ ] **Dynamic Product page**
-- [ ] **Dynamic Cart page**
+- [x] **Dynamic Product page**
+- [x] **Dynamic Cart page**
 - [x] **Login & Registration**
-- [ ] **Search bar**
+- [x] **Search bar**
