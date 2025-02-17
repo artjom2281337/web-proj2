@@ -64,11 +64,20 @@
                 <div class="carousel">
                     <?php
                         $dicsount = true;
-                    
-                        // TODO: Get discounted items from database to show here
+
+                        require "test/db.php";
+
+                        $sql = "SELECT itemid FROM items WHERE isDiscount";
+                        $result = $conn -> query($sql);
+                        $arr = [];
+
+                        if ($result -> num_rows > 0) {
+                            while ($row = $result -> fetch_assoc()) {
+                                $arr[] = $row["itemid"];
+                            }
+                        }
                         
-                        for ($i = 1; $i < 5; $i++) {
-                            $id = $i;
+                        foreach ($arr as $id) {
                             include("carousel-item.php");
                         }
                     ?>

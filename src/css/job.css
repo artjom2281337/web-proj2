@@ -39,9 +39,15 @@ article{
     border-radius: 8px;
     background-color: #D9D9D9;
 }
+
+.jobb div {
+    width: 100%;
+}
+
 .job-title{
     font-weight: bold;
 }
+
 .load-more button{
     margin-top: 20px;
     padding: 10px 20px;
@@ -55,6 +61,11 @@ article{
 
 .job-date {
     margin: 0 20px;
+    text-align: center;
+}
+
+.job-location {
+    text-align: right;
 }
 
 @media only screen and (max-width: 600px) {
@@ -65,10 +76,12 @@ article{
     .search-bar input {
         font-size: 20px;
         line-height: 24px;
+        margin-top: 10px;
     }
 
     button {
         font-size: 20px;
+        margin-top: 10px;
     }
 
     .load-more button {

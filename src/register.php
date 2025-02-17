@@ -37,12 +37,16 @@
         include "register.html";
     } else { // Email can be used
 
+        session_start();
+
         // Insert
         $sql="INSERT INTO users (fname, lname, email, password, iscorp)
         VALUES('$firstName', '$lastName', '$email', '$password', $corporate)";
 
         if ($conn -> query($sql) === true) { // Success
             $id = getId($conn, $email);
+            $_SESSION["userid"] = $id;
+            $_SESSION["email"] = $email;
             echo "<script>top.window.location = 'index.php?id=$id'</script>";
         } else { // Something went wrong
             echo "<script>alert('Something went wrong.')</script>";

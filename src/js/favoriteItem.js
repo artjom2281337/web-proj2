@@ -2,7 +2,6 @@ function favoriteItemClick(button) {
     
     // Item ID
     let itemID = button.children[1].value
-    console.log(itemID)
 
     // Is item favorited already?
     let img = button.children[0]

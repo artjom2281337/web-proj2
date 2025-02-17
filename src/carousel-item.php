@@ -24,7 +24,6 @@
             $item_country = $row['country'];
             $ingred= $row['ingred'];
             $allerg= $row['allergies'];
-            $item_favorite = false;
             
         }
     }
@@ -35,12 +34,6 @@
     <div class="main-items-1-div-top">
         <div class="main-items-1-div-top-head">
             <span class="discount-tag">Discount!</span>
-            <button class="favorite-button">
-            <img src=<?php if ($item_favorite) {
-                            echo "img/full_heart.png";
-                        } else { echo "img/heart.png"; }?>>
-                <param name="item-id" value=<?php echo $id; ?>>
-            </button>
         </div>        
         <img src=<?php echo "$item_image alt=$item_name"; ?> onclick="goToItem(<?php echo $id; ?>)">
     </div>

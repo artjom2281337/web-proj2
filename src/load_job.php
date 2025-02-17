@@ -1,10 +1,5 @@
 <?php 
-    require 'test/db.php';
-
-    $industry = $_POST['industry'];
-    $location = $_POST['location'];
-    
-    $sql = "SELECT * FROM jobs WHERE name LIKE '%$industry%' AND (location LIKE '%$location%' OR postcode LIKE '%$location%') LIMIT $count";
+    $sql = "SELECT * FROM jobs LIMIT $count";
     $result = $conn -> query($sql);
 
     if ($result -> num_rows > 0) {
@@ -25,3 +20,6 @@
     }
 
 ?>
+
+
+

@@ -28,10 +28,12 @@ if ($result->num_rows > 0) {
         $allerg = $row['allergies'];
         $item_favorite = false;
 
-        $fav_sql = "SELECT * FROM fav_items WHERE userid='$_SESSION[userid]' AND itemid='$_GET[id]'";
-        $fav_result = $conn->query($fav_sql);
-        if ($fav_result->num_rows > 0) {
-            $item_favorite = true;
+        if (isset($_SESSION['userid'])) {
+            $fav_sql = "SELECT * FROM fav_items WHERE userid='$_SESSION[userid]' AND itemid='$_GET[id]'";
+            $fav_result = $conn->query($fav_sql);
+            if ($fav_result->num_rows > 0) {
+                $item_favorite = true;
+            }
         }
 
     }

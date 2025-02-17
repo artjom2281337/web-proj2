@@ -11,38 +11,45 @@
     $css_file = "job";
     include("header.php");
     
-    $sql = "SELECT * FROM jobs LIMIT 5";
-    $result = $conn->query($sql);
+    $count = 5;
+
+    if (isset($_POST["load"])) {
+        $count = (int) $_POST["load"] + 5;
+    }
 ?>
 
     <article>
         <div class="search-bar">
-            <form method="get" action="job_search.php">
-                <input type="search" name="industry" placeholder="Industry">
-                <input type="search" name="location" placeholder="Location or Postal Code">
+            <form method="POST">
+                <input type="search" name="industry" placeholder="Industry" value=<?php echo isset($_POST["industry"]) ? $_POST["industry"] : ""; ?>>
+                <input type="search" name="location" placeholder="Location or Postal Code" value=<?php echo isset($_POST["location"]) ? $_POST["location"] : ""; ?>>
                 <button type="submit">Search Jobs</button>
+            </form>
+            <form method="POST">
+                <input type="hidden" name="industry" value="">
+                <input type="hidden" name="location" value="">
+                <button type="sumbit">Reset Filter</button>
             </form>
         </div>
 
         <div class="job-list">
-            <?php 
-            if ($result -> num_rows > 0) {
-                while ($row = $result->fetch_assoc()) {
-                    $job_name = $row["name"];
-                    $job_date = $row["startdate"];
-                    $job_location = $row["location"];
-                    $job_postcode = $row["postcode"];
+            <?php
+            if (isset($_POST["industry"]) || isset($_POST["location"])) {
+                include("job_search.php");
+            } else {
+                include("load_job.php");
+            }
             ?>
-            <div class="jobb">
-                <div class="job-title"><?php echo $job_name;?></div>
-                <div class="job-date"><?php echo $job_date;?></div>
-                <div class="job-location"><?php echo $job_location. " ". $job_postcode;?></div>
-            </div>
-            <?php }
-            }?>
         </div>
         <div class="load-more">
-            <button>Load more</button>
+            <form method="POST">
+                <input type="hidden" name="load" id="load" value=<?php echo "'$count'"; ?>>
+                <?php
+                    if (isset($_POST["industry"])) echo '<input type="hidden" name="industry" value='.$_POST["industry"].'>';
+                    if (isset($_POST["location"])) echo '<input type="hidden" name="location" value='.$_POST["location"].'>';
+                ?>
+                <button type="submit">Load more</button>
+            </form>
         </div>
     </article>
 

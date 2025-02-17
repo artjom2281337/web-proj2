@@ -25,6 +25,13 @@ include("header.php");
 
 <main id="search-main">
     <h2>Search results for "<?php echo $search; ?>"</h2>
+    <?php 
+    // No item found
+    if ($result -> num_rows == 0) {
+        echo "<h1>No items found</h1>";
+        die();
+    }
+    ?>
     <span><?php echo $result_count ?> results</span>
     <div id="search-results">
         <?php foreach ($search_results as $item): ?>
@@ -37,15 +44,19 @@ include("header.php");
                             <span> </span> <!-- to keep heart on right -->
                         <?php endif; ?>
                         <?php
-                        $user_id = $_SESSION['userid'];
+                        
                         $item_id = $item['itemid'];
                         $is_favorite = false;
+                        
+                        if (isset($_SESSION['userid'])) {
+                            $user_id = $_SESSION['userid'];
+                            
+                            $fav_sql = "SELECT * FROM fav_items WHERE userid = $user_id AND itemid = $item_id";
+                            $fav_result = $conn->query($fav_sql);
 
-                        $fav_sql = "SELECT * FROM fav_items WHERE userid = $user_id AND itemid = $item_id";
-                        $fav_result = $conn->query($fav_sql);
-
-                        if ($fav_result->num_rows > 0) {
-                            $is_favorite = true;
+                            if ($fav_result -> num_rows > 0) {
+                                $is_favorite = true;
+                            }
                         }
                         ?>
 
