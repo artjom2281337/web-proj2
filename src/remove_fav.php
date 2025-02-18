@@ -7,7 +7,7 @@ if (!isset($_SESSION["userid"])) {
     exit();
 }
 
-require "test/db.php"; 
+require "db.php"; 
 
 $userid = $_SESSION["userid"];
 $itemid = $_GET["id"];

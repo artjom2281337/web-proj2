@@ -1,19 +1,15 @@
 <?php
-require 'test/db.php';
+require 'db.php';
 session_start();
 
-// ID of item to load
 $item_id = $_GET["id"];
 
-// Select
 $sql = "SELECT * FROM items WHERE itemid='$item_id'";
 $result = $conn->query($sql);
 
-// HTML variables
 $title = "Item Page";
 $css_file = "item";
 
-// Database variables
 if ($result->num_rows > 0) {
     while ($row = $result->fetch_assoc()) {
 
@@ -39,10 +35,8 @@ if ($result->num_rows > 0) {
     }
 }
 
-// Close connection
 $conn->close();
 
-// Header
 include("header.php");
 ?>
 

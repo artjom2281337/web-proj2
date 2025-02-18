@@ -1,5 +1,5 @@
 <?php
-require 'test/db.php';
+require 'db.php';
 session_start();
 
 $search = $_GET['query'];

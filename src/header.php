@@ -38,14 +38,14 @@
         </div>
 
         <div class="entry">
-            <?php if (isset($_SESSION["userid"])): ?> <!-- logged in -->
+            <?php if (isset($_SESSION["userid"])): ?> 
                 <a href="logout.php">
                     <button id="login-button">
                         <img src="img/logout.png" alt="Logout">
                         <span>Logout</span>
                     </button>
                 </a>
-            <?php else: ?> <!-- not logged in -->
+            <?php else: ?> 
                 <a href="entry.php">
                     <button id="login-button">
                         <img src="img/user.png" alt="Login">
@@ -66,7 +66,7 @@
 
     </header>
 
-    <nav id="resp-nav"> <!-- had to be seperated from the header for responsiveness-->
+    <nav id="resp-nav"> 
         <div id="logo-div-nav">
             <div class="logo-container">
                 <img src="img/logo.png" alt="MMarket Logo">
@@ -100,7 +100,6 @@
         <ul class="nav-bottom">
             <li><span>MMarket</span></li>
             <li><span><?php echo date(DATE_RFC822); ?></span></li>
-            <!-- https://www.w3schools.com/php/func_date_date.asp -->
             <li><span><b>© All rights reversed.</b></span></li>
         </ul>
 

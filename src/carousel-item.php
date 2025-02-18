@@ -1,5 +1,5 @@
 <?php
-    require 'test/db.php' ;
+    require 'db.php' ;
 
     if ($dicsount) {
         $class = "carousel-item-discount";
@@ -7,11 +7,9 @@
         $class = "carousel-item";
     }
 
-    // Load item
     $sql = "SELECT * FROM items WHERE itemid='$id'";
     $result = $conn -> query($sql);
 
-    // Get data
     if ($result -> num_rows > 0) {
         while($row = $result -> fetch_assoc()){
 

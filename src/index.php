@@ -5,7 +5,6 @@
     $css_file = "index";
     include("header.php");
 
-    // login session check
     $loggedIn = isset($_SESSION["userid"]);
 ?>
 
@@ -32,7 +31,6 @@
                 <?php
                         $dicsount = false;
                     
-                        // TODO: Get items from database that you want to show here
                         
                         for ($i = 1; $i < 5; $i++) {
                             $id = $i;
@@ -65,7 +63,7 @@
                     <?php
                         $dicsount = true;
 
-                        require "test/db.php";
+                        require "db.php";
 
                         $sql = "SELECT itemid FROM items WHERE isDiscount";
                         $result = $conn -> query($sql);

@@ -1,5 +1,5 @@
 <?php 
-    require 'test/db.php';
+    require 'db.php';
 
     $industry = $_POST['industry'];
     $location = $_POST['location'];

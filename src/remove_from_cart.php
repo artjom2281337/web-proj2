@@ -1,6 +1,6 @@
 <?php
     session_start();
-    require 'test/db.php';
+    require 'db.php';
 
     if (!isset($_SESSION['userid'])) {
         header("Location: entry.php");

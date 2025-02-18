@@ -1,6 +1,6 @@
 <?php
 session_start();
-require 'test/db.php';
+require 'db.php';
 
 if (!isset($_SESSION['userid'])) {
     header("Location: entry.php");
@@ -51,7 +51,6 @@ $conn->close();
                             <span class="cart-item-name"><?php echo $item['item_name']; ?></span>
                             <span
                                 class="cart-item-price"><?php echo number_format($item['price'] * $item['quantity'], 2, ',', '.') . "€"; ?></span>
-                            <!-- formats the number properly instead of plain integer -->
                         </div>
                         <div class="cart-item-content-bot">
                             <div class="cart-delete">

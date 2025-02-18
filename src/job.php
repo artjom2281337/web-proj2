@@ -1,5 +1,5 @@
 <?php
-    require 'test/db.php';
+    require 'db.php';
     session_start();
 
     /* if (!isset($_SESSION['userid'])) { <!-- in case you need user privileges for job page -->

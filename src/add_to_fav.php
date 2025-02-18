@@ -7,7 +7,7 @@ if (!isset($_SESSION["userid"])) {
     exit();
 }
 
-require "test/db.php"; 
+require "db.php"; 
 
 $itemid = $_GET["id"];
 $userid = $_SESSION["userid"];
@@ -22,7 +22,5 @@ if ($result -> num_rows == 0) {
 
 $conn->close();
 echo "<script>top.window.location = 'item.php?id={$_GET['id']}'</script>";
-// Warning: Cannot modify header information - headers already sent (output started at script:line)
-// TODO: Solve the error. Apparently you are not ssupposed to output anything before calling header function but after commenting the code out, the function on item page wont work.
 exit();
 ?>
