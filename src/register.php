@@ -1,5 +1,5 @@
 <?php
-    
+
     function getId($conn, $email): int {
         
         $sql = "SELECT userid FROM users WHERE email = '$email'";
@@ -22,6 +22,13 @@
     $lastName = $_POST["lname"];
     $email = $_POST["email"];
     $password = md5($_POST["password"]);
+    $confirmPassword = md5($_POST["confirm-password"]);
+
+    if ($password != $confirmPassword) {
+        echo "<script>alert('Passwords are not matching.')</script>";
+        include "register.html";
+        die();
+    }
 
     $sql = "SELECT * FROM users WHERE email = '$email'";
     $result = $conn -> query($sql);

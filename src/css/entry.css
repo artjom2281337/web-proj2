@@ -147,7 +147,7 @@ p {
     display: flex;
 }
 
-.checkbox {
+#agreement {
     transform: scale(1.7);
     width: 20%;
     height: 100%;
