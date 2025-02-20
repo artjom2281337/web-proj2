@@ -4,10 +4,10 @@
     $title = "Main Menu";
     $css_file = "index";
     $desc = "Shop freshest groceries online in MMarket! Buy high-quality fruits, vegetables, dairy, and meats delivered to your doorstep."
-    include("header.php");
+    ?>
+    <?php include("header.php"); ?>
 
-    $loggedIn = isset($_SESSION["userid"]);
-?>
+    <?php $loggedIn = isset($_SESSION["userid"]); ?>
 
     <main id="main-main">
         <section id="main-membership">
@@ -90,17 +90,17 @@
                 <div class="main-rec">
                     <img src="img/preferimg.jpg">
                     <h2>Awarding Service</h2>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Pariatur, omnis assumenda sequi ducimus expedita aliquid, corrupti voluptates deserunt quia dolore maiores, soluta iusto magni ipsam rem? Neque rerum ex possimus.</p>
+                    <p>By using our service, you are already awarded with the shortest lead time and quality products at the best prices.</p>
                 </div>
                 <div class="main-rec">
                     <img src="img/preferimg.jpg">
                     <h2>Fast and Secure</h2>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Pariatur, omnis assumenda sequi ducimus expedita aliquid, corrupti voluptates deserunt quia dolore maiores, soluta iusto magni ipsam rem? Neque rerum ex possimus.</p>
+                    <p>Your time and safety matter to us. With our fast delivery options and secure payment systems, you can enjoy fresh groceries at your doorstep without any hassle.</p>
                 </div>
                 <div class="main-rec">
                     <img src="img/preferimg.jpg">
                     <h2>Quality</h2>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Pariatur, omnis assumenda sequi ducimus expedita aliquid, corrupti voluptates deserunt quia dolore maiores, soluta iusto magni ipsam rem? Neque rerum ex possimus.</p>
+                    <p>We source only the finest products. From farm-fresh produce to premium pantry staples, every item is carefully selected to meet the highest standards of quality and freshness.</p>
                 </div>
             </div>
         </section>
@@ -111,7 +111,7 @@
             </div>
             <div id="main-job-info">
                 <h2>Job applications</h2>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Velit odio accusamus nihil a! Esse voluptate totam nobis alias accusantium est sunt suscipit! Maxime voluptatum quae adipisci quibusdam tenetur? Quam, dolorum?</p>
+                <p>Join MMarket and be part of a team that delivers quality and convenience! Grow, innovate, and make an impact in a dynamic environment. Bring your skills, passion, and creativity — apply today and start your rewarding career with us!</p>
                 <a href="job.php"><button>Take me to the job opportunities</button></a>
             </div>
         </section>
