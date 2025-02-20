@@ -7,9 +7,6 @@ $item_id = $_GET["id"];
 $sql = "SELECT * FROM items WHERE itemid='$item_id'";
 $result = $conn->query($sql);
 
-$title = "Item Page";
-$css_file = "item";
-
 if ($result->num_rows > 0) {
     while ($row = $result->fetch_assoc()) {
 
@@ -36,6 +33,10 @@ if ($result->num_rows > 0) {
 }
 
 $conn->close();
+
+$title = "Item Page";
+$css_file = "item";
+$desc = "Consume our fresh  MMarket " . $item_name . ", a delicious piece of " . $type . ". Perfect for your meals!";
 
 include("header.php");
 ?>

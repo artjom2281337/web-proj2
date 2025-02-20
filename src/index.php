@@ -3,6 +3,7 @@
 
     $title = "Main Menu";
     $css_file = "index";
+    $desc = "Shop freshest groceries online in MMarket! Buy high-quality fruits, vegetables, dairy, and meats delivered to your doorstep."
     include("header.php");
 
     $loggedIn = isset($_SESSION["userid"]);

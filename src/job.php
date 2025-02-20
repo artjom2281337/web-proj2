@@ -9,6 +9,9 @@
 
     $title = "Jobs";
     $css_file = "job";
+    $desc = "Take a look of career opportunities at MMarket. Join our team and be part of our team. Check out our current job openings with various roles in such job crisis!";
+
+
     include("header.php");
     
     $count = 5;

@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /src/
+Disallow: ../docker-compose.yml
+Disallow: ../php.ini
+Disallow: ../README.md
